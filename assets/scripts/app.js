@@ -48,7 +48,7 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
       logEntry.target = "PLAYER";
       break;
     case LOG_EVENT_GAME_OVER:
-        logEntry.target = null;
+      logEntry.target = null;
       break;
     default:
       logEntry = {};
@@ -157,9 +157,12 @@ function healHandler() {
 function logHandler() {
   for (let index = 0; index < 3; index++) {
     console.log("=====");
-    
   }
-  console.log(battleLog);
+
+  for (const iterator of battleLog ) {
+    console.log(iterator);
+  }
+ 
 }
 
 attackBtn.addEventListener("click", attackHandler);
