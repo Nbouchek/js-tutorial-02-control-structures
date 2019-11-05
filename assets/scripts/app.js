@@ -159,14 +159,17 @@ function logHandler() {
     console.log("=====");
   }
 
-  // for (const iterator of battleLog) {
-  //   console.log(iterator);
-  // }
+  let j = 0;
+
+  while (j < 3) {
+    console.log("=====");
+    j++;
+  }
 
   for (const key in battleLog) {
     console.log(key);
     if (battleLog.hasOwnProperty(key)) {
-      const element = battleLog[key];
+      const element = battleLog.key;
       console.log(element);
     }
   }
