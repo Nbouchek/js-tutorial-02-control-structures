@@ -166,12 +166,15 @@ function logHandler() {
     j++;
   } while (j < 3);
 
-  for (const key in battleLog) {
-    console.log(key);
-    if (battleLog.hasOwnProperty(key)) {
-      const element = battleLog[key];
-      console.log(element);
+  let i = 0;
+  for (const logEntry of battleLog) {
+    console.log(`#${i}`);
+
+    for (const key in logEntry) {
+      console.log(`${key} => ${logEntry[key]}`);
     }
+    i++;
+    break;
   }
 }
 
