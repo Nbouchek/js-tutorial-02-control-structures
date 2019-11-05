@@ -155,6 +155,10 @@ function healHandler() {
 }
 
 function logHandler() {
+  for (let index = 0; index < 3; index++) {
+    console.log("=====");
+    
+  }
   console.log(battleLog);
 }
 
