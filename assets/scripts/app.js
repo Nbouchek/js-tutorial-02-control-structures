@@ -159,17 +159,17 @@ function logHandler() {
     console.log("=====");
   }
 
-  let j = 0;
+  let j = 5;
 
-  while (j < 3) {
-    console.log("=====");
+  do {
+    console.log(j);
     j++;
-  }
+  } while (j < 3);
 
   for (const key in battleLog) {
     console.log(key);
     if (battleLog.hasOwnProperty(key)) {
-      const element = battleLog.key;
+      const element = battleLog[key];
       console.log(element);
     }
   }
