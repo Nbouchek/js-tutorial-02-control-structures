@@ -159,9 +159,15 @@ function logHandler() {
   for (let index = 0; index < 3; index++) {
     console.log("=====");
   }
-  let j = 3;
-  do {
-    console.log(j);
+  let j = 0;
+  outerWhile: do {
+    console.log("Outer: ", j);
+    innerFor: for (let index = 0; index < 5; index++) {
+      if (index === 3) {
+        break outerWhile;
+      }
+      console.log("Inner: ", index);
+    }
     j++;
   } while (j < 3);
 
