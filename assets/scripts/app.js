@@ -16,15 +16,21 @@ let lastLoggedEntry;
 
 function getMaxLifeValues() {
   const enteredValue = prompt("Maximum life for you and th emonster", "100");
-  const parseValue = parseInt(enteredValue);
-  if (isNaN(parseValue) || parseValue <= 0) {
-    throw { message: "Invalid user input, not a number!q" };
+  const parsedValue = parseInt(enteredValue);
+  if (isNaN(parsedValue) || parsedValue <= 0) {
+    throw { message: "Invalid user input, not a number!" };
   }
-
-  return parseValue;
+  return parsedValue;
 }
 
-let chosenMaxValue = getMaxLifeValues();
+let chosenMaxLife;
+try {
+  chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+  console.log(error);
+  chosenMaxLife = 100;
+  alert("Invalid input, default value of 100 is used");
+}
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
